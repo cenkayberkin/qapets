@@ -3,6 +3,6 @@ class Question < ActiveRecord::Base
   has_many :answers
   belongs_to :user
 
-  has_many :Quscores
-  has_many :scored_users, through: :Quscore, class_name: "User"
+  has_many :quscores
+  has_many :scored_users, through: :quscore, class_name: "User"
 end

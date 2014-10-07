@@ -20,13 +20,10 @@
   <% @questions.each do |question| %>
   <div class="row">
     <div class="col-md-1">
-      <p class="text-center">ANUMBER</p>
+      <p class="text-center"><%= question.quscores.count %></p>
     </div>
     <div class="col-md-1">
-      <p class="text-center">ANUMBER</p>
-    </div>
-    <div class="col-md-1">
-      <p class="text-center">ANUMBER</p>
+      <p class="text-center"><%= question.answers.count %></p>
     </div>
     <div class="col-md-9">
       <p><%= question.title %></p>
@@ -39,9 +36,7 @@
     <div class="col-md-1">
       <p class="text-center">Answers</p>
     </div>
-    <div class="col-md-1">
-      <p class="text-center">Views</p>
-    </div>
+
     <div class="col-md-5">
       <p>Question Created At:<%= question.created_at %></p>
     </div>
