@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :anscores
+
   resources :quscores
 
   resources :tags

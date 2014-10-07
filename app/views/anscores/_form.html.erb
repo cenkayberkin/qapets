@@ -1,0 +1,17 @@
+<%= form_for(@anscore) do |f| %>
+  <% if @anscore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@anscore.errors.count, "error") %> prohibited this anscore from being saved:</h2>
+
+      <ul>
+      <% @anscore.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

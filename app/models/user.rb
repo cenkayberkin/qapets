@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :Quscores
   has_many :pointed_scores, through: :Quscore, class_name: "Question"
+
+  has_many :Anscores
+  has_many :pointed_answer_scores, through: :Anscore, class_name: "Answer"
 end
