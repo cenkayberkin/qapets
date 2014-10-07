@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :quscores
+
   resources :tags
 
   devise_for :users

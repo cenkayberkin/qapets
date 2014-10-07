@@ -1,0 +1,2 @@
+module QuscoresHelper
+end

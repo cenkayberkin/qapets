@@ -1,0 +1,23 @@
+<h1>Listing quscores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quscores.each do |quscore| %>
+      <tr>
+        <td><%= link_to 'Show', quscore %></td>
+        <td><%= link_to 'Edit', edit_quscore_path(quscore) %></td>
+        <td><%= link_to 'Destroy', quscore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quscore', new_quscore_path %>

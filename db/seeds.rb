@@ -10,3 +10,8 @@ q2 = Question.create(title: "Question2", content:"blah blah2",user: user2, tags:
 
 Answer.create(question: q1, user: user2,content: "answerrrrrr")
 Answer.create(question: q1, user: user2,content: "answerrrrrr")
+
+qs1 = Quscore.create({user: user1, question: q2, point: 1})
+qs2 = Quscore.create({user: user2, question: q2, point: 1})
+qs3 = Quscore.create({user: user1, question: q1, point: 1})
+qs4 = Quscore.create({user: user2, question: q1, point: 1})
