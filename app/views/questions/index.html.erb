@@ -17,79 +17,39 @@
       <p><b>Explore Our Questions</b></p>
     </div>
   </div>
+  <% @questions.each do |question| %>
   <div class="row">
     <div class="col-md-1">
-      <p class="text-center">6</p>
-      <p class="text-center">Votes</p>
+      <p class="text-center">ANUMBER</p>
     </div>
     <div class="col-md-1">
-      <p class="text-center">4</p>
-      <p class="text-center">Answers</p>
+      <p class="text-center">ANUMBER</p>
     </div>
     <div class="col-md-1">
-      <p class="text-center">284</p>
-      <p class="text-center">Views</p>
+      <p class="text-center">ANUMBER</p>
     </div>
     <div class="col-md-9">
-      <p>Lorem ipsum dolor sit amet, ea laboramus deseruisse sit, cu quas mundi?</p>
-      <p class="text-right">Modified 59 minutes ago by: USERNAME</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-1">
-      <p class="text-center">6</p>
-      <p class="text-center">Votes</p>
-    </div>
-    <div class="col-md-1">
-      <p class="text-center">4</p>
-      <p class="text-center">Answers</p>
-    </div>
-    <div class="col-md-1">
-      <p class="text-center">284</p>
-      <p class="text-center">Views</p>
-    </div>
-    <div class="col-md-9">
-      <p>Lorem ipsum dolor sit amet, ea laboramus deseruisse sit, cu quas mundi?</p>
-      <p class="text-right">Modified 59 minutes ago by: USERNAME</p>
+      <p><%= question.title %></p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-1">
-      <p class="text-center">6</p>
       <p class="text-center">Votes</p>
     </div>
     <div class="col-md-1">
-      <p class="text-center">4</p>
       <p class="text-center">Answers</p>
     </div>
     <div class="col-md-1">
-      <p class="text-center">284</p>
       <p class="text-center">Views</p>
     </div>
-    <div class="col-md-9">
-      <p>Lorem ipsum dolor sit amet, ea laboramus deseruisse sit, cu quas mundi?</p>
-      <p class="text-right">Modified 59 minutes ago by: USERNAME</p>
+    <div class="col-md-5">
+      <p>Question Created At:<%= question.created_at %></p>
+    </div>
+    <div class="col-md-4">
+      <p>By: <%= question.user.email %></p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-1">
-      <p class="text-center">6</p>
-      <p class="text-center">Votes</p>
-    </div>
-    <div class="col-md-1">
-      <p class="text-center">4</p>
-      <p class="text-center">Answers</p>
-    </div>
-    <div class="col-md-1">
-      <p class="text-center">284</p>
-      <p class="text-center">Views</p>
-    </div>
-    <div class="col-md-9">
-      <p>Lorem ipsum dolor sit amet, ea laboramus deseruisse sit, cu quas mundi?</p>
-      <p class="text-right">Modified 59 minutes ago by: USERNAME</p>
-    </div>
-  </div>
+  <% end %>
 </div>
 <div class="container">
   <ul class="pagination">
@@ -107,14 +67,3 @@
     <p class="text-muted">QAPets &copy; 2014</p>
   </div>
 </div>
-
-
-
-
-
-
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
