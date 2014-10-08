@@ -42,13 +42,15 @@ ActiveRecord::Schema.define(version: 20141007164812) do
     t.integer "question_id"
   end
 
-  create_table "quscores", id: false, force: true do |t|
+  create_table "quscores", force: true do |t|
     t.integer  "user_id"
     t.integer  "question_id"
     t.integer  "point"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "quscores", ["user_id", "question_id"], name: "index_quscores_on_user_id_and_question_id", unique: true
 
   create_table "tags", force: true do |t|
     t.datetime "created_at"
