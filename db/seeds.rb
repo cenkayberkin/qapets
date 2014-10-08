@@ -36,21 +36,18 @@ end
   a.save
 end
 
-10.times do |questionscore|
-   questionscore = Quscore.new(user: User.find(rand(5)+1), question: Question.find(rand(10)+1), point: rand(10) > 3 ? 1 : -1)
-   questionscore.save
+10.times do |num|
+  10.times do |t |
+    Quscore.create(user: User.find(num + 1), question: Question.find(t + 1), point: 1)
+  end
 end
 
-10.times do |answerscore|
-   answerscore = Anscore.new(user: User.find(rand(5)+1), answer: Answer.find(rand(10)+1), point: rand(10) > 3 ? 1 : -1)
-   answerscore.save
+10.times do |num|
+  30.times do |t |
+    Anscore.create(user: User.find(num + 1), answer: Answer.find(t + 1) , point: 1)
+  end
 end
 
-
-Quscore.create(user: User.find(5), question: Question.find(3), point: 1)
-Quscore.create(user: User.find(2), question: Question.find(3), point: 1)
-Quscore.create(user: User.find(3), question: Question.find(3), point: 1)
-Quscore.create(user: User.find(1), question: Question.find(3), point: -1)
 User.create(email: 'Matthew.J.Viens@gmail.com', password: 'password')
 
 

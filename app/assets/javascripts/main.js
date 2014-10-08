@@ -6,15 +6,16 @@ $(function(){
     var element = $(this);
     $.get("/quscores/changevote",{ question_id: question_id , vote: "up"},
     function(data,status){
-
-      // console.log(data.result);
-      console.log(status);
-      console.log(element)
-
-      // console.log( $("span#result_"+ question_id).text());
-      newValue = parseInt($("span#result_"+ question_id).text()) + parseInt(data.result);
-      $("span#result_"+ question_id).text(newValue);
-      console.log(newValue);
+      if (data.status == "2") {
+        console.log("please login first`");
+        $("#questionModal").modal("show");
+      }else{
+        console.log(status);
+        console.log(element);
+        newValue = parseInt($("span#result_"+ question_id).text()) + parseInt(data.result);
+        $("span#result_"+ question_id).text(newValue);
+        console.log(newValue);
+      }
     });
   });
 
@@ -24,15 +25,17 @@ $(function(){
     var element = $(this);
     $.get("/quscores/changevote",{ question_id: question_id , vote: "down"},
     function(data,status){
-
-      // console.log(data.result);
-      console.log(status);
-      console.log(element)
-
-      // console.log( $("span#result_"+ question_id).text());
-      newValue = parseInt($("span#result_"+ question_id).text()) + parseInt(data.result);
-      $("span#result_"+ question_id).text(newValue);
-      console.log(newValue);
+      if (data.status == "2") {
+        console.log("please login first`");
+        $("#questionModal").modal("show");
+      }else{
+        console.log(status);
+        console.log(element);
+        // console.log( $("span#result_"+ question_id).text());
+        newValue = parseInt($("span#result_"+ question_id).text()) + parseInt(data.result);
+        $("span#result_"+ question_id).text(newValue);
+        console.log(newValue);
+      }
     });
   });
 });
