@@ -18,14 +18,14 @@
     </div>
   </div>
   <% @questions.each do |question| %>
-  <div class="row">
+  <div class="qtop row">
     <div class="col-md-1">
       <p class="text-center"><%= question.num_votes %></p>
     </div>
     <div class="col-md-1">
       <p class="text-center"><%= question.num_answers %></p>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 col-md-offset-1">
       <p><%= link_to question.title, question %></p>
     </div>
   </div>
@@ -37,8 +37,8 @@
       <p class="text-center">Answers</p>
     </div>
 
-    <div class="col-md-5">
-      <p>Question Created At:<%= question.created_at %></p>
+    <div class="col-md-5 col-md-offset-1">
+      <p>Question Created On: <%= question.created_at %></p>
     </div>
     <div class="col-md-4">
       <p>By: <%= question.user.email %></p>
@@ -47,15 +47,9 @@
   <% end %>
 </div>
 <div class="container">
-  <ul class="pagination">
-    <li><a href="#">&laquo;</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
-  </ul>
+  <div class="row">
+<%= paginate @questions %>
+  </div>
 </div>
 <div class="footer">
   <div class="container">

@@ -72,6 +72,9 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.1)
+    kaminari (0.16.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     mime-types (2.3)
@@ -147,6 +150,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  kaminari
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
