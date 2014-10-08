@@ -13,7 +13,7 @@
         <%= image_tag avatar_url(user) %>
       </div>
       <div class="col-md-3 col-md-offset-1">
-        <p><%= user.email %>
+        <%= link_to user.email, user %>
       </div>
     <% else %>
       <div class="col-md-1 col-md-offset-1">
