@@ -20,13 +20,13 @@
   <% @questions.each do |question| %>
   <div class="row">
     <div class="col-md-1">
-      <p class="text-center"><%= question.quscores.count %></p>
+      <p class="text-center"><%= question.num_votes %></p>
     </div>
     <div class="col-md-1">
-      <p class="text-center"><%= question.answers.count %></p>
+      <p class="text-center"><%= question.num_answers %></p>
     </div>
     <div class="col-md-9">
-      <p><%= question.title %></p>
+      <p><%= link_to question.title, question %></p>
     </div>
   </div>
   <div class="row">

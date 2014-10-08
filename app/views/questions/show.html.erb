@@ -1,4 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<div class="main container">
+  <div class="question container">
+    <div class="row">
+      <div class="col-md-10">
+        <h2 class="text-center"><%= @question.title %><h2>
+      </div>
+      <div class="col-md-6">
+        <h4><%= @question.user.email %></h4>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-right"><%= @question.created_at %></h4>
+      </div>
+      <div class="col-md-12">
+        <div class="col-md-2">
+          <a href="#" class="up_question_voteLink" data-question="<%= @question.id %>">Up</a>
+          </br>
+          <span id="result_<%= @question.id %>"><%= @question.quscores.sum('point') %></span>
+          </br>
+          <a href="#" class="down_question_voteLink" data-question="<%= @question.id %>">Down</a>
+        </div>
+        <div class="col-md-10">
+          <h4> <%= @question.content %> </h4>
+        </div>
+      </div>
+  </div>
+</br>
+  <div class="answer container">
+    <% @question.answers.each do |answer| %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-2">
+          <a href="#" class="up_answer_voteLink" data-article="<%=answer.id%>">Up</a>
+          </br>
+          <span> <%= answer.anscores.sum('point')%></span>
+          </br>
+          <a href="#" class="down_answer_voteLink" data-article="<%=answer.id%>">Down</a>
+        </div>
+        <div class="col-md-10">
+          <%= answer.content %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= answer.user.email %>
+      </div>
+    </div>
+  </br>
+    <% end %>
+  </div>
+
+<%= link_to 'Questions', questions_path %>
+</div>

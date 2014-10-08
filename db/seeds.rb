@@ -1,5 +1,5 @@
-# user1 =User.create(:email => "user1@blah.com", :password => 'password')
-# user2 = User.create(:email => "user2@blah.com",:password => 'password')
+user1 =User.create(:email => "user1@blah.com", :password => 'password')
+user2 = User.create(:email => "user2@blah.com",:password => 'password')
 
 # t1 = Tag.create(name: "Dog")
 # t2 = Tag.create(name: "Training")
@@ -31,6 +31,25 @@ end
 end
 
 10.times do |a|
-  a = Answer.new(question: Question.find(rand(10)+1), user: User.find(rand(5)+1))
+  a = Answer.new(question: Question.find(rand(10)+1), user: User.find(rand(5)+1),content: Faker::Lorem.paragraph(3))
   a.save
 end
+
+10.times do |questionscore|
+   questionscore = Quscore.new(user: User.find(rand(5)+1), question: Question.find(rand(10)+1), point: rand(10) > 3 ? 1 : -1)
+   questionscore.save
+end
+
+10.times do |answerscore|
+   answerscore = Anscore.new(user: User.find(rand(5)+1), answer: Answer.find(rand(10)+1), point: rand(10) > 3 ? 1 : -1)
+   answerscore.save
+end
+
+
+Quscore.create(user: User.find(5), question: Question.find(3), point: 1)
+Quscore.create(user: User.find(2), question: Question.find(3), point: 1)
+Quscore.create(user: User.find(3), question: Question.find(3), point: 1)
+Quscore.create(user: User.find(1), question: Question.find(3), point: -1)
+
+
+

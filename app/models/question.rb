@@ -5,4 +5,13 @@ class Question < ActiveRecord::Base
 
   has_many :quscores
   has_many :scored_users, through: :quscore, class_name: "User"
+
+  def num_votes
+    quscores.sum('point')
+  end
+
+  def num_answers
+    answers.count
+  end
+
 end

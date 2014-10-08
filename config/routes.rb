@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
+  get 'quscores/changevote' => 'quscores#change_vote'
+
   resources :anscores
-
   resources :quscores
-
   resources :tags
-
   devise_for :users
   resources :answers
-
   resources :questions
   root to: "questions#index"
 
