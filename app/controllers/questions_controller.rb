@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    @tags = Tag.all
   end
 
   # GET /questions/1/edit
@@ -71,6 +72,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params[:question]
+      params.require(:question).permit(:content, :user_id, :title, :tags)
     end
 end
