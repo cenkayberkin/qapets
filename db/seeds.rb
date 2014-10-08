@@ -18,19 +18,19 @@ user2 = User.create(:email => "user2@blah.com",:password => 'password')
 
 # as1 = Anscore.create({ user: user1, answer: a1 ,point:1 })
 
-5.times do |u|
+30.times do |u|
   u = User.new(email: Faker::Internet.email, password: 'password')
   u.save
 end
 
-10.times do |q|
+60.times do |q|
   q = Question.new(title: Faker::Lorem.sentence,
                   content: Faker::Lorem.paragraph(2),
                   user: User.find(rand(5)+1))
   q.save
 end
 
-20.times do |a|
+70.times do |a|
   a = Answer.new(question: Question.find(rand(10)+1), user: User.find(rand(5)+1),
                 content: Faker::Lorem.paragraph(3))
   a.save

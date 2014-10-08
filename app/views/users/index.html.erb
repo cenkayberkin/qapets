@@ -29,6 +29,9 @@
   </div>
   <br/>
   <div class="row">
+    <%= paginate @users %>
+  </div>
+  <div class="row">
     <div class="col-md-12">
       <p><%= link_to 'Back To Questions', questions_path %></p>
     </div>
