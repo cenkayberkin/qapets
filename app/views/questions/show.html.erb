@@ -44,8 +44,22 @@
     <% end %>
   </div>
   </br>
-  <div class="row">
-    <div class="col-md-10 col-md-offset-2">
+  <div class="container">
+
+  <%= form_for Answer.new do |f| %>
+    <h5>Answer This Question!</h5>
+    <%= f.text_area :content, placeholder: "My Awesome Answere Here", class: "form-control" %>
+    <%= f.hidden_field :question_id, value: @question.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <br/>
+    <%= f.submit 'Answer!', class: "btn btn-default" %>
+  <% end %>
+
+  </div>
+  <br/>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
       <%= link_to 'Back To Questions', questions_path %>
     </div>
   </div>
