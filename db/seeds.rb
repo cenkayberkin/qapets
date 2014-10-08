@@ -51,6 +51,7 @@ Quscore.create(user: User.find(5), question: Question.find(3), point: 1)
 Quscore.create(user: User.find(2), question: Question.find(3), point: 1)
 Quscore.create(user: User.find(3), question: Question.find(3), point: 1)
 Quscore.create(user: User.find(1), question: Question.find(3), point: -1)
+User.create(email: 'Matthew.J.Viens@gmail.com', password: 'password')
 
 
 
