@@ -30,8 +30,9 @@ end
   q.save
 end
 
-10.times do |a|
-  a = Answer.new(question: Question.find(rand(10)+1), user: User.find(rand(5)+1),content: Faker::Lorem.paragraph(3))
+20.times do |a|
+  a = Answer.new(question: Question.find(rand(10)+1), user: User.find(rand(5)+1),
+                content: Faker::Lorem.paragraph(3))
   a.save
 end
 
