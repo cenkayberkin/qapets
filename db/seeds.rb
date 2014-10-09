@@ -5,7 +5,7 @@ t1 = Tag.create(name: "Dog")
 t2 = Tag.create(name: "Training")
 t3 = Tag.create(name: "Cat")
 
-# q1 = Question.create(title: "Question1", content:"blah blah1",user: user1, tags: [t1,t2])
+ q1 = Question.create(title: "Question1", content:"blah blah1",user: user1, tags: [t1,t2])
 # q2 = Question.create(title: "Question2", content:"blah blah2",user: user2, tags: [t3,t2])
 
 # a1 = Answer.create(question: q1, user: user2,content: "answerrrrrr")

@@ -1,10 +1,14 @@
+
 <p id="notice"><%= notice %></p>
 
 <div class="main container">
   <div class="question container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="text-center"><%= @question.title %><h2>
+        <h2 class="text-center">
+          <%= image_tag avatar_url(@question.user), class: "gravitar" %>
+          <%= @question.title %>
+          <h2>
       </div>
     </div>
     <div class="row">
@@ -36,7 +40,10 @@
         </br>
         <a href="#" class="down_answer_voteLink" data-article="<%=answer.id%>">Down</a>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-1">
+        <%= image_tag avatar_url(answer.user), class: "gravitar" %>
+      </div>
+      <div class="col-md-9">
         <p><%= answer.user.email %> Responded with:</p>
         <p><%= answer.content %></p>
       </div>

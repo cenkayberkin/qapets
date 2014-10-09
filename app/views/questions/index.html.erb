@@ -1,14 +1,17 @@
+
 <div class="jumbotron">
   <div class="container">
     <h1>QAPets</h1>
-    <p>Lorem ipsum dolor sit amet, ea laboramus deseruisse sit, cu quas mundi
-      sit. Eum id nibh vivendo scribentur, illud ancillae copiosae eu his. Te
-      apeirian verterem qualisque mel, sit ea molestie reprehendunt. Ut pro
-      justo populo consetetur, alia viris nemore has cu. In pri clita perfecto,
-      euismod consulatu et usu. Has in rebum iisque prodesset.
+    <p>QAPets is a community where pet lovers can ask questions and get
+      answers from other pet enthusiasts in the community.
     </p>
-      <a class="btn btn-primary btn-lg" role="button">Learn More</a>
-    </p>
+    <% if current_user.nil? %>
+    <p>
+        Getting startedis easy:
+        <%= button_to 'Sign Up', new_user_registration_path,
+          class: "btn btn-primary btn-lg" %>
+      </p>
+      <% end %>
   </div>
 </div>
 <div class="container">
@@ -25,8 +28,13 @@
     <div class="col-md-1">
       <p class="text-center"><%= question.num_answers %></p>
     </div>
-    <div class="col-md-9 col-md-offset-1">
-      <p><%= link_to question.title, question %></p>
+    <div class="col-md-5 col-md-offset-1">
+      <h5><%= link_to question.title, question %></h5>
+    </div>
+    <div class="col-md-4">
+      <% question.tags.each do |tag| %>
+        <%= tag.name %>
+      <% end %>
     </div>
   </div>
   <div class="row">
@@ -51,3 +59,4 @@
 <%= paginate @questions %>
   </div>
 </div>
+

@@ -5,3 +5,18 @@
 .qtop {
   border-top: 1px solid #C3C4C7;
 }
+
+.jumbotron {
+  background-origin: padding-box;
+  background-image: image_url('background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-attachment: relative;
+  background-clip: border-box;
+  margin: 0px;
+  }
+
+
+
+
