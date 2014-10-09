@@ -12,7 +12,7 @@ t7 = Tag.create(name: "Walk")
 t8 = Tag.create(name: "Hunting")
 t9 = Tag.create(name: "Behavior")
 
-# q1 = Question.create(title: "Question1", content:"blah blah1",user: user1, tags: [t1,t2])
+ q1 = Question.create(title: "Question1", content:"blah blah1",user: user1, tags: [t1,t2])
 # q2 = Question.create(title: "Question2", content:"blah blah2",user: user2, tags: [t3,t2])
 
 # a1 = Answer.create(question: q1, user: user2,content: "answerrrrrr")
