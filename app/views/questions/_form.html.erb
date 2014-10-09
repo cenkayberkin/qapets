@@ -24,23 +24,24 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content, autocomplete: "off", class: "form-control" %>
+    <%= f.label :tags %><br>
+    <%= f.collection_select :tags, @tags,:id, :name %>
   </div>
 
-
-
   <%= f.hidden_field :user_id, value: current_user.id %>
-
-  <div class="form-group">
+  <div id="tagMessage">
+    Please select related to tag to submit.
+  </div>
+  <div class="form-group" id="tagformSubmit">
     <%= f.submit "Ask!", class: "btn btn-success" %>
 
   <% end %>
+  </div>
   <p>
     <ul id="tasks" />
      <input type="submit" id="addTask" value="add" />
     </ul>
   </p>
-  </div>
+
 </div>
 
