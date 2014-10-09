@@ -28,7 +28,7 @@
   </br>
   <div class="answer container">
     <% @question.answers.each do |answer| %>
-    <div class="row">
+    <div class="qtop row">
       <div class="col-md-2">
         <a href="#" class="up_answer_voteLink" data-answer="<%=answer.id%>">Up</a>
         </br>
@@ -41,11 +41,47 @@
         <p><%= answer.content %></p>
       </div>
     </div>
+    <% end %>
   </div>
   </br>
+
+  <% if user_signed_in? %>
+  <div class="container">
+    <%= form_for Answer.new do |f| %>
+      <h5>Answer This Question!</h5>
+      <%= f.text_area :content, placeholder: "My Awesome Answere Here", class: "form-control" %>
+      <%= f.hidden_field :question_id, value: @question.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <br/>
+      <%= f.submit 'Answer!', class: "btn btn-default" %>
+    <% end %>
+
+    <% else %>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-4">
+        <h4>Have A Great Answer?</h4>
+      </div>
+      <div class="col-md-2">
+        <%= button_to "Sign In!", new_user_session_path, class: "btn btn-success" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-4">
+        <h4>Need An Account?</h4>
+      </div>
+      <div class="col-md-4">
+        <%= button_to "Sign Up!", new_user_registration_path,
+        class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
   <% end %>
-  <div class="row">
-    <div class="col-md-10 col-md-offset-2">
+
+  </div>
+  <br/>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
       <%= link_to 'Back To Questions', questions_path %>
     </div>
   </div>

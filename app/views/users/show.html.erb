@@ -1,0 +1,72 @@
+<div class="container">
+  <br/>
+  <div class="container">
+    <div class="row text-center">
+      <%= image_tag avatar_show(@user), class: 'gravitar' %>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h1><%= @user.email %></h1>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h3>Member Since: <%= @user.created_at %></h3>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Questions Asked</h4>
+      </div>
+    </div>
+
+    <% if @user.questions.empty? %>
+    <div class="row">
+      <div class="col-md-12">
+        <p>None Yet!</p>
+      </div>
+    </div>
+
+    <% else %>
+      <% @user.questions.each do |question| %>
+      <div class="row">
+        <div class="col-md-12">
+          <p><%= link_to "#{question.title}", question %></p>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Questions Answered</h4>
+        </div>
+      </div>
+
+      <% if @user.answers.empty? %>
+        <div class="row">
+          <div class="col-md-12">
+            <p>None Yet!</p>
+          </div>
+        </div>
+
+      <% else %>
+        <% @user.answers.each do |answer| %>
+          <div class="row">
+            <div class="col-md-12">
+              <p><%= link_to "#{answer.question.title}", answer.question %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+
