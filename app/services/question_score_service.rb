@@ -36,7 +36,7 @@ class QuestionScoreService
       question_scores.first.point -= 1
       question_scores.first.save()
 
-      questionOwner.point -= @point
+      questionOwner.point += @point
       questionOwner.save()
       result = -1
     elsif !question_scores.empty?  &&  oldPoint == -1 && newPoint == 1
@@ -56,7 +56,7 @@ class QuestionScoreService
       question_scores.first.point -= 1
       question_scores.first.save()
 
-      questionOwner.point -= @point
+      questionOwner.point += @point
       questionOwner.save()
       result = -1
     elsif !question_scores.empty?  &&  oldPoint == 0 && newPoint == 1

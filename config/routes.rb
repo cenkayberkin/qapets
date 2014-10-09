@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'quscores/changevote' => 'quscores#change_vote'
+  get 'anscores/changevote' => 'anscores#change_vote'
 
   resources :anscores
   resources :quscores

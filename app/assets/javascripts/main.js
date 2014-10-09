@@ -38,4 +38,50 @@ $(function(){
       }
     });
   });
+
+  $("a.up_answer_voteLink").click(function() {
+    var answer_id = $(this).attr("data-answer");
+    var element = $(this);
+
+    console.log(answer_id);
+
+    $.get("/anscores/changevote",{ answer_id: answer_id , vote: "up"},
+    function(data,status){
+      if (data.status == "2") {
+        console.log("please login first`");
+        $("#questionModal").modal("show");
+      }else{
+        console.log(status);
+        console.log(element);
+
+        newValue = parseInt($("span#result_"+ answer_id).text()) + parseInt(data.result);
+        $("span#result_"+ answer_id).text(newValue);
+        console.log(newValue);
+      }
+    });
+  });
+
+  $("a.down_answer_voteLink").click(function() {
+    var answer_id = $(this).attr("data-answer");
+    var element = $(this);
+
+    console.log(answer_id);
+
+    $.get("/anscores/changevote",{ answer_id: answer_id , vote: "down"},
+    function(data,status){
+      if (data.status == "2") {
+        console.log("please login first`");
+        $("#questionModal").modal("show");
+      }else{
+        console.log(status);
+        console.log(element);
+
+        newValue = parseInt($("span#result_"+ answer_id).text()) + parseInt(data.result);
+        $("span#result_"+ answer_id).text(newValue);
+        console.log(newValue);
+      }
+    });
+  });
+
 });
+
