@@ -32,7 +32,7 @@
       <h5><%= link_to question.title, question %></h5>
     </div>
     <div class="col-md-4">
-      <% question.tags.each do |tag| %>
+      <% question.tags.uniq.each do |tag| %>
         <%= tag.name %>
       <% end %>
     </div>
