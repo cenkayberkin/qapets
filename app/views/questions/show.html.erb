@@ -24,6 +24,12 @@
         <h5> <%= @question.content %> </h5>
       </div>
     </div>
+    <h4>Tags</h4>
+    <% @question.tags.uniq.each do |tag| %>
+      <div class="col-md-10">
+        <h5> <%= tag.name %> </h5>
+      </div>
+    <% end %>
   </div>
   </br>
   <div class="answer container">
