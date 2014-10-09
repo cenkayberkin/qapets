@@ -3,14 +3,20 @@
 
 <div class="main container">
   <div class="question container">
+    <br/>
     <div class="row">
-      <div class="col-md-12">
-        <h2 class="text-center">
-          <%= image_tag avatar_url(@question.user), class: "gravitar" %>
-          <%= @question.title %>
-          <h2>
+      <div class="col-md-2">
+          <h2><%= image_tag avatar_url(@question.user), class: "gravitar" %></h2>
+        </div>
+        <div class="col-md-6">
+          <h2><%= @question.title %></h2>
+        </div>
+        <div class="col-md-4">
+          <% @question.tags.uniq.each do |tag| %>
+            <h2 class="btn btn-primary btn-sm"><%= tag.name %></h2>
+          <% end %>
+        </div>
       </div>
-    </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-2">
         <h4><%= @question.user.email %> Asked at <%= @question.created_at %>:</h4>
@@ -28,12 +34,6 @@
         <h5> <%= @question.content %> </h5>
       </div>
     </div>
-    <h4>Tags</h4>
-    <% @question.tags.uniq.each do |tag| %>
-      <div class="col-md-10">
-        <h5> <%= tag.name %> </h5>
-      </div>
-    <% end %>
   </div>
   </br>
   <div class="answer container">
@@ -47,10 +47,10 @@
         <a href="#" class="down_answer_voteLink" data-answer="<%=answer.id%>">Down</a>
       </div>
       <div class="col-md-1">
-        <%= image_tag avatar_url(answer.user), class: "gravitar" %>
+        <h4><%= image_tag avatar_url(answer.user), class: "gravitar" %></h4>
       </div>
       <div class="col-md-9">
-        <p><%= answer.user.email %> Responded with:</p>
+        <p><%= link_to answer.user.email, answer.user %> Responded with:</p>
         <p><%= answer.content %></p>
       </div>
     </div>
@@ -62,7 +62,7 @@
   <div class="container">
     <%= form_for Answer.new do |f| %>
       <h5>Answer This Question!</h5>
-      <%= f.text_area :content, placeholder: "My Awesome Answere Here", class: "form-control" %>
+      <%= f.text_area :content, placeholder: "My Awesome Answer Here", class: "form-control" %>
       <%= f.hidden_field :question_id, value: @question.id %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <br/>
