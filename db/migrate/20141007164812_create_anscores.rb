@@ -5,6 +5,8 @@ class CreateAnscores < ActiveRecord::Migration
       t.belongs_to :answer
       t.integer :point
       t.timestamps
-    end
+  end
+  add_index :anscores, [ :user_id, :answer_id ], :unique => true
+
   end
 end

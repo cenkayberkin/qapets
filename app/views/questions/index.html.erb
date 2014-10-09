@@ -51,6 +51,15 @@
     <div class="col-md-4">
       <p>By: <%= question.user.email %></p>
     </div>
+    <div>
+      <% if  question.tags.count == 0 %>
+        <p>no tags</p>
+      <% else %>
+        <% question.tags.uniq.each do |tag|%>
+          <p> <%= tag.name %> </p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
   <% end %>
 </div>

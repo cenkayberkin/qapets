@@ -34,11 +34,11 @@
     <% @question.answers.each do |answer| %>
     <div class="qtop row">
       <div class="col-md-2">
-        <a href="#" class="up_answer_voteLink" data-article="<%=answer.id%>">Up</a>
+        <a href="#" class="up_answer_voteLink" data-answer="<%=answer.id%>">Up</a>
         </br>
-        <span> <%= answer.anscores.sum('point')%></span>
+        <span id="result_<%= answer.id %>"> <%= answer.anscores.sum('point')%></span>
         </br>
-        <a href="#" class="down_answer_voteLink" data-article="<%=answer.id%>">Down</a>
+        <a href="#" class="down_answer_voteLink" data-answer="<%=answer.id%>">Down</a>
       </div>
       <div class="col-md-1">
         <%= image_tag avatar_url(answer.user), class: "gravitar" %>

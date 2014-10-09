@@ -1,9 +1,16 @@
 user1 =User.create(:email => "user1@blah.com", :password => 'password')
 user2 = User.create(:email => "user2@blah.com",:password => 'password')
 
+t0 = Tag.create(name: "Play")
 t1 = Tag.create(name: "Dog")
 t2 = Tag.create(name: "Training")
 t3 = Tag.create(name: "Cat")
+t4 = Tag.create(name: "Events")
+t5 = Tag.create(name: "Exercise")
+t6 = Tag.create(name: "Outdoor")
+t7 = Tag.create(name: "Walk")
+t8 = Tag.create(name: "Hunting")
+t9 = Tag.create(name: "Behavior")
 
  q1 = Question.create(title: "Question1", content:"blah blah1",user: user1, tags: [t1,t2])
 # q2 = Question.create(title: "Question2", content:"blah blah2",user: user2, tags: [t3,t2])
@@ -26,7 +33,10 @@ end
 60.times do |q|
   q = Question.new(title: Faker::Lorem.sentence,
                   content: Faker::Lorem.paragraph(2),
-                  user: User.find(rand(5)+1))
+                  user: User.find(rand(5)+1),
+                  tags: [ Tag.find(rand(10) + 1),
+                          Tag.find(rand(10) + 1),
+                          Tag.find(rand(10) + 1)])
   q.save
 end
 

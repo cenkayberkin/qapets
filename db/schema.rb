@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20141007164812) do
     t.datetime "updated_at"
   end
 
+  add_index "anscores", ["user_id", "answer_id"], name: "index_anscores_on_user_id_and_answer_id", unique: true
+
   create_table "answers", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
