@@ -1,5 +1,8 @@
+[ ![Codeship Status for cenkayberkin/qapets](https://www.codeship.io/projects/22d7cc50-32c9-0132-5f38-3ab195f80b5d/status)](https://www.codeship.io/projects/40478)
+
 QAPets
 =========
+
 
 QAPets is a question and answer site for the pet owner community.
 
