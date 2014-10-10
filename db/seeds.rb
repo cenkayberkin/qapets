@@ -41,7 +41,7 @@ end
 end
 
 70.times do |a|
-  a = Answer.new(question: Question.find(rand(60)+1), user: User.find(rand(5)+1),
+  a = Answer.new(question: Question.find(rand(60)+1), user: User.find(rand(30)+1),
                 content: Faker::Lorem.paragraph(3))
   a.save
 end

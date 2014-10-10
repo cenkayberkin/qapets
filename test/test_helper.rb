@@ -11,10 +11,10 @@ class ActiveSupport::TestCase
   fixtures :all
   Capybara.javascript_driver = :poltergeist
 
-  # def sign_in(user = :user)
-  #   visit '/'
-  #   fill_in 'Email', with: user.email
-  #   fill_in 'Password', with: 'password'
-  #   click_on 'Log in'
-  # end
+  def sign_in(user = :example_user)
+    visit '/'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'password'
+    click_on 'Sign In'
+  end
 end
