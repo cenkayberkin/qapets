@@ -19,19 +19,19 @@
       </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-2">
-        <h4><%= @question.user.email %> Asked at <%= @question.created_at %>:</h4>
+        <h4><%=link_to @question.user.email, @question.user %> Asked at <%= @question.created_at %>:</h4>
       </div>
     </div>
     <div class="row">
       <div class="col-md-2">
-        <a href="#" class="up_question_voteLink" data-question="<%= @question.id %>">Up</a>
-        </br>
-        <span id="result_<%= @question.id %>"><%= @question.quscores.sum('point') %></span>
-        </br>
-        <a href="#" class="down_question_voteLink" data-question="<%= @question.id %>">Down</a>
+        <a href="#" class="up_question_voteLink" data-question="<%= @question.id %>">
+          <span class="glyphicon glyphicon-arrow-up"></a>
+        <h4><span id="result_<%= @question.id %>"><%= @question.quscores.sum('point') %>
+        </h4>
+        <a href="#" class="down_question_voteLink" data-question="<%= @question.id %>"><span class="glyphicon glyphicon-arrow-down"></a>
       </div>
       <div class="col-md-10">
-        <h5> <%= @question.content %> </h5>
+        <h5> <%= @question.content %>
       </div>
     </div>
   </div>
@@ -40,11 +40,15 @@
     <% @question.answers.each do |answer| %>
     <div class="qtop row">
       <div class="col-md-2">
-        <a href="#" class="up_answer_voteLink" data-answer="<%=answer.id%>">Up</a>
-        </br>
-        <span id="result_<%= answer.id %>"> <%= answer.anscores.sum('point')%></span>
-        </br>
-        <a href="#" class="down_answer_voteLink" data-answer="<%=answer.id%>">Down</a>
+        <a href="#" class="up_answer_voteLink" data-answer="<%=answer.id%>">
+          <span class="glyphicon glyphicon-arrow-up">
+        </a>
+        <h5><span id="result_<%= answer.id %>"><%= answer.anscores.sum('point')%>
+          </span>
+        </h5>
+        <a href="#" class="down_answer_voteLink" data-answer="<%=answer.id%>">
+          <span class="glyphicon glyphicon-arrow-down">
+        </a>
       </div>
       <div class="col-md-1">
         <h4><%= image_tag avatar_url(answer.user), class: "gravitar" %></h4>
